@@ -1,0 +1,19 @@
+<style>
+    h2 {
+        text-align: center;
+    }
+    div {
+        text-align: center;
+    }
+</style>
+<h2>Hero Details</h2>
+<div>
+    <label for="name"><b>Hero name: </b></label>
+    <input id="name" [(ngModel)]="hero.name" placeholder="name">
+</div>
+<br>
+<div>
+    <span><b>Id: </b> </span>{{hero.id}}
+    <span><b> | Name: </b> </span>{{hero.name}}
+</div>
+
