@@ -1,12 +1,3 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
 <style>
   :host {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -328,21 +319,26 @@
 
 <div class="content" role="main">
   <h1>{{title}}</h1>
-
+  <!-- Terminal -->
   <div class="chat-box">
       <p>Iron Man: Hello</p>
       <p>Chino: Hi</p>
   </div>
-
+  
+  <!-- Hero Lists -->
   <app-heroes-lists></app-heroes-lists>
-</div>
+  <br>
 
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+  <!-- For Input Decorator-->
+  <!-- <app-heroes-lists [item]="currentItem"></app-heroes-lists> -->
+
+  <!-- For Output Decorator -->
+  <app-item-output (newItemEvent)="addItem($event)">
+    
+  </app-item-output>
+  <ul style="list-style-type: none; text-align: center;">
+    <li *ngFor="let item of items">{{item}}</li>
+  </ul>
+</div>
 
 <router-outlet></router-outlet>

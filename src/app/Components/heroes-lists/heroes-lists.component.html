@@ -5,6 +5,9 @@
     div {
         text-align: center;
     }
+    p {
+        margin-bottom: 5em;
+    }
 </style>
 <h2>Hero Details</h2>
 <div>
@@ -15,5 +18,31 @@
 <div>
     <span><b>Id: </b> </span>{{hero.id}}
     <span><b> | Name: </b> </span>{{hero.name}}
+</div>
+
+<!-- For Input -->
+<p>
+    {{item}}
+</p>
+
+<!-- Mock Data -->
+<div class="hero-lists">
+    <h2>Heroes Lists</h2>
+    <ul class="heroes">
+        <li *ngFor="let hero of heroes" (click)="onSelect(hero)">
+            <button [class.selected]="hero === selectedHero" type="button" (click)="onSelect(hero)">
+                <span class="badge">{{hero.id}}</span>
+                <span class="name">{{hero.name}}</span>
+            </button>
+        </li>
+    </ul>
+
+    <div *ngIf="selectedHero">
+        <h2>Hero Details</h2>
+        <div>
+            <span><b style="color:red">Id: </b> </span>{{selectedHero.id}}
+            <span><b style="color:red"> | Name: </b> </span><input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
+        </div>
+    </div>
 </div>
 

@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Heroes } from 'src/app/Interfaces/heroes';
+import { HEROES } from 'src/app/Mock-Data/mock-heroes';
+
 
 @Component({
   selector: 'app-heroes-lists',
@@ -11,4 +13,16 @@ export class HeroesListsComponent {
     id: 1,
     name: 'Iron Man'
   };
+
+  // Input
+  @Input() item = ''; 
+
+  // Mock Data
+  heroes = HEROES;
+
+  selectedHero?: Heroes;
+  onSelect(hero: Heroes): void {
+    this.selectedHero = hero;
+  }
+
 }
