@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  web:
+    build: .
+    ports:
+      - "4200:4200"
+    volumes:
+      - .:/app
+    environment:
+      - .env
+    command: >
+      bash -c "npm run start"
